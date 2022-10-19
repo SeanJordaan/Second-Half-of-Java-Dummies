@@ -29,7 +29,7 @@ public class Notes {
     
     JavaFX provides many different layout panes for you to work with
     There are 5 in this chapter
-    1) HBox
+    1)HBox
         This layout pane arranges nodes horizontally, one next to the other
     2)VBox
         This layout pane arranges nodes vertically, one above the other
@@ -228,10 +228,7 @@ public class Notes {
     4)If a component doesn’t fill its allotted area, you can tell the grid pane layout 
       manager how you want the component to be positioned within the area
     
-    Sketching out a plan
-    
-    Before you create a grid pane layout, draw a sketch showing how you want the 
-    components to appear in the panel. 
+   
     
     
     

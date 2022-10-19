@@ -13,7 +13,10 @@ import java.text.NumberFormat;
 
 public class ListMovies {
 
-    public static void main(String[] args)// →6
+    public static void main(String[] args)// →6 The main method begins by calling the getMovies method to get a 
+                                          //ResultSet object that contains the movies to be listed. Then a while
+                                          //loop reads each row of the result set. The getMovie method is called to 
+                                          //create a Movie object from the data in the current row.
     {
         NumberFormat cf = NumberFormat.getCurrencyInstance();
         ResultSet movies = getMovies();
@@ -30,7 +33,9 @@ public class ListMovies {
         }
     }
 
-    private static ResultSet getMovies() //→28
+    private static ResultSet getMovies() //→28 The getMovies method is responsible for getting a database connection, 
+                                        //and then querying the database to get the movies. The first task is 
+                                        //delegated to the getConnection method
     {
         Connection con = getConnection();
         try {
@@ -46,7 +51,8 @@ public class ListMovies {
         return null;
     }
 
-    private static Connection getConnection() //→46
+    private static Connection getConnection() //→46  The getConnection method creates a Connection object to the 
+                                              //database. Note that the user ID and password are hard-coded into this method. 
     {
         Connection con = null;
         try {
@@ -65,7 +71,8 @@ public class ListMovies {
         return con;
     }
 
-    private static Movie getMovie(ResultSet movies)// →70
+    private static Movie getMovie(ResultSet movies)// →70 The getMovie method extracts the title, year, and price from the current 
+                                                    //row and uses these values to create a Movie object.
     {
         try {
             String title = movies.getString("Title");
@@ -78,7 +85,9 @@ public class ListMovies {
         return null;
     }
 
-    private static class Movie //→86
+    private static class Movie //→86  The Movie class is created as an inner class. To keep this application 
+                               //simple, this class uses public fields and a single constructor that initializes 
+                               //the fields with the values passed as parameters.
     {
 
         public String title;
